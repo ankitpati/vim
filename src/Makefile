@@ -325,7 +325,7 @@ CClink = $(CC)
 # Uncomment this line when you don't want to get the GUI version, although you
 # have GTK and/or Motif.  Also use --without-x if you don't want X11
 # at all.
-#CONF_OPT_GUI = --disable-gui
+CONF_OPT_GUI = --disable-gui
 
 # Uncomment one of these lines if you have that GUI but don't want to use it.
 # The automatic check will use another one that can be found.
@@ -423,7 +423,7 @@ CClink = $(CC)
 # When you get an error for a missing "perl.exp" file, try creating an empty
 # one: "touch perl.exp".
 # This requires at least "normal" features, "tiny" and "small" don't work.
-#CONF_OPT_PERL = --enable-perlinterp
+CONF_OPT_PERL = --enable-perlinterp
 #CONF_OPT_PERL = --enable-perlinterp=dynamic
 
 # PYTHON
@@ -490,18 +490,18 @@ CClink = $(CC)
 
 # When building with at least "big" features, right-left and Arabic
 # features are enabled.  Use this to disable them.
-#CONF_OPT_MULTIBYTE = --disable-rightleft --disable-arabic
+CONF_OPT_MULTIBYTE = --disable-rightleft --disable-arabic
 
 # NLS - National Language Support
 # Uncomment this when you do not want to support translated messages, even
 # though configure can find support for it.
-#CONF_OPT_NLS = --disable-nls
+CONF_OPT_NLS = --disable-nls
 
 # XIM - X Input Method.  Special character input support for X11 (Chinese,
 # Japanese, special symbols, etc).  Also needed for dead-key support.
 # When omitted it's automatically enabled for the X-windows GUI.
 #CONF_OPT_INPUT = --enable-xim
-#CONF_OPT_INPUT = --disable-xim
+CONF_OPT_INPUT = --disable-xim
 
 # FONTSET - X fontset support for output of languages with many characters.
 # Uncomment this when you want to output a multibyte language.
@@ -515,19 +515,19 @@ CClink = $(CC)
 # Uncomment this when you do not want to include gpm support, even
 # though you have gpm libraries and includes.
 # For Debian/Ubuntu gpm support requires the libgpm-dev package.
-#CONF_OPT_GPM = --disable-gpm
+CONF_OPT_GPM = --disable-gpm
 # Use this to enable dynamic loading of the GPM library.
 #CONF_OPT_GPM = --enable-gpm=dynamic
 
 # sysmouse - For mouse support on FreeBSD and DragonFly console via sysmouse
 # Uncomment this when you do not want do include sysmouse support, even
 # though you have /dev/sysmouse and includes.
-#CONF_OPT_SYSMOUSE = --disable-sysmouse
+CONF_OPT_SYSMOUSE = --disable-sysmouse
 
 # libcanberra - For sound support.  Default is on for big features.
 # Uncomment one of the two to chose otherwise.
 # CONF_OPT_CANBERRA = --enable-canberra
-# CONF_OPT_CANBERRA = --disable-canberra
+CONF_OPT_CANBERRA = --disable-canberra
 
 # libsodium - For enhanced encryption.  Default is on.
 # Uncomment the next line to not use libsodium
@@ -540,17 +540,17 @@ CClink = $(CC)
 #CONF_OPT_FEAT = --with-features=small
 #CONF_OPT_FEAT = --with-features=normal
 #CONF_OPT_FEAT = --with-features=big
-#CONF_OPT_FEAT = --with-features=huge
+CONF_OPT_FEAT = --with-features=huge
 
 # COMPILED BY - For including a specific e-mail address for ":version".
-#CONF_OPT_COMPBY = "--with-compiledby=John Doe <JohnDoe@yahoo.com>"
+CONF_OPT_COMPBY = "--with-compiledby=Ankit Pati <contact@ankitpati.in>"
 
 # X WINDOWS DISABLE - For creating a plain Vim without any X11 related fancies
 # (otherwise Vim configure will try to include xterm titlebar access)
 # Also disable the GUI above, otherwise it will be included anyway.
 # When both GUI and X11 have been disabled this may save about 15% of the
 # code and make Vim startup quicker.
-#CONF_OPT_X = --without-x
+CONF_OPT_X = --without-x
 
 # X WINDOWS DIRECTORY - specify X directories
 # If configure can't find you X stuff, or if you have multiple X11 derivatives
@@ -564,7 +564,7 @@ CClink = $(CC)
 # Vim will try to use XSMP to catch the user logging out if there are unsaved
 # files.  Uncomment this line to disable that (it prevents vim trying to open
 # communications with the session manager).
-#CONF_OPT_XSMP = --disable-xsmp
+CONF_OPT_XSMP = --disable-xsmp
 
 # You may wish to include xsmp but use exclude xsmp-interact if the logout
 # XSMP functionality does not work well with your session-manager (at time of
@@ -585,7 +585,7 @@ CClink = $(CC)
 # another compiler.  It is wise to run 'make reconfig' to start all over
 # again.
 #CC = cc
-#CC = gcc
+CC = gcc
 #CC = clang
 
 # COMPILER FLAGS - change as you please. Either before running {{{1
@@ -595,6 +595,7 @@ CClink = $(CC)
 # When not defined, configure will try to use -O2 -g for gcc and -O for cc.
 #CFLAGS = -g
 #CFLAGS = -O
+CFLAGS = -O3 -march=native
 
 # Optimization limits - depends on the compiler.  Automatic check in configure
 # doesn't work very well, because many compilers only give a warning for
@@ -1010,7 +1011,7 @@ TOOLS = xxd/xxd$(EXEEXT)
 ### prefix	the top directory for the data (default "/usr/local")
 #
 # Uncomment the next line to install Vim in your home directory.
-#prefix = $(HOME)
+prefix = $(HOME)/.local
 
 ### exec_prefix	is the top directory for the executable (default $(prefix))
 #

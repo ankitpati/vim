@@ -171,7 +171,7 @@ int write_t_8u_state = FALSE;
 #  ifdef OSPEED_EXTERN
 extern short ospeed;
 #   else
-short ospeed;
+//short ospeed;
 #   endif
 # endif
 # ifndef HAVE_UP_BC_PC

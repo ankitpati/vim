@@ -595,7 +595,7 @@ CC = gcc
 # When not defined, configure will try to use -O2 -g for gcc and -O for cc.
 #CFLAGS = -g
 #CFLAGS = -O
-CFLAGS = -O3 -march=native
+CFLAGS = -fPIC -O3 -march=native
 
 # Optimization limits - depends on the compiler.  Automatic check in configure
 # doesn't work very well, because many compilers only give a warning for
